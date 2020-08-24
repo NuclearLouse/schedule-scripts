@@ -1,0 +1,96 @@
+2020-08-24 18:09:26.088 [INFO] Воркер [avtodetali.pro dumpBD] запуск скрипта:pg_dump -h *.*.*.* -p 5432 -U postgres -w -F p -a -b -f C:\Users\android\postgres_databases\*.*.*.*_avtodetali\avtodetali_db.backup avtodetali
+2020-08-24 18:09:45.586 [INFO] конфиг файл изменился. Перезагружаю конфиг ...
+2020-08-24 18:09:45.616 [INFO] Воркер [avtodetali.pro dumpBD] запуск скрипта:eh -h *.*.*.* -p 5432 -U postgres -w -F p -a -b -f C:\Users\android\postgres_databases\*.*.*.*_avtodetali\avtodetali_db.backup avtodetali
+2020-08-24 18:09:45.616 [INFO] конфиг файл изменился. Перезагружаю конфиг ...
+2020-08-24 18:09:45.651 [INFO] Воркер [avtodetali.pro dumpBD] запуск скрипта:eh -h *.*.*.* -p 5432 -U postgres -w -F p -a -b -f C:\Users\android\postgres_databases\*.*.*.*_avtodetali\avtodetali_db.backup avtodetali
+2020-08-24 18:09:47.562 [INFO] конфиг файл изменился. Перезагружаю конфиг ...
+2020-08-24 18:09:47.565 [INFO] Воркер [avtodetali.pro dumpBD] запуск скрипта:echo -h *.*.*.* -p 5432 -U postgres -w -F p -a -b -f C:\Users\android\postgres_databases\*.*.*.*_avtodetali\avtodetali_db.backup avtodetali
+2020-08-24 18:09:47.604 [INFO] конфиг файл изменился. Перезагружаю конфиг ...
+2020-08-24 18:09:47.605 [INFO] Воркер [avtodetali.pro dumpBD] запуск скрипта:echo -h *.*.*.* -p 5432 -U postgres -w -F p -a -b -f C:\Users\android\postgres_databases\*.*.*.*_avtodetali\avtodetali_db.backup avtodetali
+2020-08-24 18:09:47.621 [INFO] Воркер [avtodetali.pro dumpBD] Команда успешно отработала. Длительность оперции: 26.0034ms
+2020-08-24 18:09:47.655 [INFO] Воркер [avtodetali.pro dumpBD] Команда успешно отработала. Длительность оперции: 48.0211ms
+2020-08-24 18:11:16.992 [INFO] Получен сигнал: [interrupt]
+2020-08-24 18:28:27.304 [INFO] Воркер [avtodetali.pro dumpBD] запуск скрипта:echo -h *.*.*.* -p 5432 -U postgres -w -F p -a -b -f C:\Users\android\postgres_databases\*.*.*.*_avtodetali\avtodetali_db.backup avtodetali
+2020-08-24 18:28:27.379 [INFO] Воркер [avtodetali.pro dumpBD] Команда успешно отработала. Длительность оперции: 24.0101ms
+2020-08-24 18:28:54.897 [INFO] Получен сигнал: [interrupt]
+2020-08-24 18:38:38.595 [INFO] Воркер [avtodetali.pro dumpBD] запуск скрипта:echo -h *.*.*.* -p 5432 -U postgres -w -F p -a -b -f C:\Users\android\postgres_databases\*.*.*.*_avtodetali\avtodetali_db.backup avtodetali
+2020-08-24 18:38:38.668 [INFO] Воркер [avtodetali.pro dumpBD] Команда успешно отработала. Длительность оперции: 25.0718ms
+2020-08-24 18:42:19.056 [INFO] Получен сигнал: [interrupt]
+2020-08-24 18:42:19.058 [INFO] Сервер отключается...
+2020-08-24 18:43:31.942 [INFO] Воркер [avtodetali.pro dumpBD] запуск скрипта:echo -h *.*.*.* -p 5432 -U postgres -w -F p -a -b -f C:\Users\android\postgres_databases\*.*.*.*_avtodetali\avtodetali_db.backup avtodetali
+2020-08-24 18:43:31.943 [INFO] Сервер статистики старт ... localhost:7777
+2020-08-24 18:43:32.031 [INFO] Воркер [avtodetali.pro dumpBD] Команда успешно отработала. Длительность оперции: 39.0016ms
+2020-08-24 18:44:52.146 [INFO] Получен сигнал: [interrupt]
+2020-08-24 18:44:52.148 [INFO] Сервер отключается...
+2020-08-24 18:44:55.893 [INFO] Воркер [avtodetali.pro dumpBD] запуск скрипта:echo -h *.*.*.* -p 5432 -U postgres -w -F p -a -b -f C:\Users\android\postgres_databases\*.*.*.*_avtodetali\avtodetali_db.backup avtodetali
+2020-08-24 18:44:55.893 [INFO] Сервер статистики старт ... localhost:7777
+2020-08-24 18:44:56.026 [INFO] Воркер [avtodetali.pro dumpBD] Команда успешно отработала. Длительность оперции: 62.9994ms
+2020-08-24 18:46:19.601 [INFO] Получен сигнал: [interrupt]
+2020-08-24 18:46:19.603 [INFO] Сервер отключается...
+2020-08-24 18:46:23.392 [INFO] Воркер [avtodetali.pro dumpBD] запуск скрипта:echo -h *.*.*.* -p 5432 -U postgres -w -F p -a -b -f C:\Users\android\postgres_databases\*.*.*.*_avtodetali\avtodetali_db.backup avtodetali
+2020-08-24 18:46:23.392 [INFO] Сервер статистики старт ... localhost:7777
+2020-08-24 18:46:23.481 [INFO] Воркер [avtodetali.pro dumpBD] Команда успешно отработала. Длительность оперции: 42.0064ms
+2020-08-24 18:59:47.838 [INFO] Получен сигнал: [interrupt]
+2020-08-24 18:59:47.840 [INFO] Сервер отключается...
+2020-08-24 19:07:50.918 [INFO] Воркер [avtodetali.pro dumpBD] запуск скрипта:echo -h *.*.*.* -p 5432 -U postgres -w -F p -a -b -f C:\Users\android\postgres_databases\*.*.*.*_avtodetali\avtodetali_db.backup avtodetali
+2020-08-24 19:07:50.919 [INFO] Сервер статистики старт ... localhost:7777
+2020-08-24 19:07:51.013 [INFO] Воркер [avtodetali.pro dumpBD] Команда успешно отработала. Длительность оперции: 38.0107ms
+2020-08-24 19:08:57.952 [INFO] Получен сигнал: [interrupt]
+2020-08-24 19:08:57.954 [INFO] Сервер отключается...
+2020-08-24 19:09:07.462 [INFO] Воркер [avtodetali.pro dumpBD] запуск скрипта:echo -h *.*.*.* -p 5432 -U postgres -w -F p -a -b -f C:\Users\android\postgres_databases\*.*.*.*_avtodetali\avtodetali_db.backup avtodetali
+2020-08-24 19:09:07.462 [INFO] Сервер статистики старт ... localhost:7777
+2020-08-24 19:09:07.540 [INFO] Воркер [avtodetali.pro dumpBD] Команда успешно отработала. Длительность оперции: 34.9918ms
+2020-08-24 19:12:09.356 [INFO] Получен сигнал: [interrupt]
+2020-08-24 19:12:09.358 [INFO] Сервер отключается...
+2020-08-24 19:12:12.679 [INFO] Воркер [avtodetali.pro dumpBD] запуск скрипта:echo -h *.*.*.* -p 5432 -U postgres -w -F p -a -b -f C:\Users\android\postgres_databases\*.*.*.*_avtodetali\avtodetali_db.backup avtodetali
+2020-08-24 19:12:12.680 [INFO] Сервер статистики старт ... localhost:7777
+2020-08-24 19:12:12.759 [INFO] Воркер [avtodetali.pro dumpBD] Команда успешно отработала. Длительность оперции: 32.0151ms
+2020-08-24 19:12:33.853 [INFO] Получен сигнал: [interrupt]
+2020-08-24 19:12:33.855 [INFO] Сервер отключается...
+2020-08-24 19:21:36.754 [INFO] Воркер [avtodetali.pro dumpBD] запуск скрипта:echo -h *.*.*.* -p 5432 -U postgres -w -F p -a -b -f C:\Users\android\postgres_databases\*.*.*.*_avtodetali\avtodetali_db.backup avtodetali
+2020-08-24 19:21:36.754 [INFO] Сервер статистики старт ... localhost:7777
+2020-08-24 19:21:36.836 [INFO] Воркер [avtodetali.pro dumpBD] Команда успешно отработала. Длительность оперции: 35.0228ms
+2020-08-24 19:21:41.584 [INFO] template: no template "statistic" associated with template "statistic.html"
+2020-08-24 19:23:04.960 [INFO] Получен сигнал: [interrupt]
+2020-08-24 19:23:04.960 [INFO] Сервер отключается...
+2020-08-24 19:23:08.681 [INFO] Воркер [avtodetali.pro dumpBD] запуск скрипта:echo -h *.*.*.* -p 5432 -U postgres -w -F p -a -b -f C:\Users\android\postgres_databases\*.*.*.*_avtodetali\avtodetali_db.backup avtodetali
+2020-08-24 19:23:08.682 [INFO] Сервер статистики старт ... localhost:7777
+2020-08-24 19:23:08.785 [INFO] Воркер [avtodetali.pro dumpBD] Команда успешно отработала. Длительность оперции: 34.9884ms
+2020-08-24 19:23:12.299 [ERRO] template: no template "statistic" associated with template "statistic.html"
+2020-08-24 19:23:57.504 [INFO] Получен сигнал: [interrupt]
+2020-08-24 19:23:57.506 [INFO] Сервер отключается...
+2020-08-24 19:24:18.429 [INFO] Воркер [avtodetali.pro dumpBD] запуск скрипта:echo -h *.*.*.* -p 5432 -U postgres -w -F p -a -b -f C:\Users\android\postgres_databases\*.*.*.*_avtodetali\avtodetali_db.backup avtodetali
+2020-08-24 19:24:18.431 [INFO] Сервер статистики старт ... localhost:7777
+2020-08-24 19:24:18.518 [INFO] Воркер [avtodetali.pro dumpBD] Команда успешно отработала. Длительность оперции: 36.0527ms
+2020-08-24 19:31:12.199 [INFO] Получен сигнал: [interrupt]
+2020-08-24 19:31:12.201 [INFO] Сервер отключается...
+2020-08-24 19:47:58.295 [INFO] Воркер [avtodetali.pro dumpBD] запуск скрипта:echo -h *.*.*.* -p 5432 -U postgres -w -F p -a -b -f C:\Users\android\postgres_databases\*.*.*.*_avtodetali\avtodetali_db.backup avtodetali
+2020-08-24 19:47:58.297 [INFO] Сервер статистики старт ... localhost:7777
+2020-08-24 19:47:58.389 [INFO] Воркер [avtodetali.pro dumpBD] Команда успешно отработала. Длительность оперции: 30.0229ms
+2020-08-24 19:48:02.762 [ERRO] template: statistic.html:49:8: executing "statistic.html" at <.Jobs>: can't evaluate field Jobs in type []*main.worker
+2020-08-24 19:48:42.056 [INFO] Получен сигнал: [interrupt]
+2020-08-24 19:48:42.058 [INFO] Сервер отключается...
+2020-08-24 19:50:47.166 [INFO] Воркер [avtodetali.pro dumpBD] запуск скрипта:echo -h *.*.*.* -p 5432 -U postgres -w -F p -a -b -f C:\Users\android\postgres_databases\*.*.*.*_avtodetali\avtodetali_db.backup avtodetali
+2020-08-24 19:50:47.167 [INFO] Сервер статистики старт ... localhost:7777
+2020-08-24 19:50:47.250 [INFO] Воркер [avtodetali.pro dumpBD] Команда успешно отработала. Длительность оперции: 27.001ms
+2020-08-24 19:55:39.909 [INFO] Получен сигнал: [interrupt]
+2020-08-24 19:55:39.910 [INFO] Сервер отключается...
+2020-08-24 19:55:43.988 [INFO] Воркер [avtodetali.pro dumpBD] запуск скрипта:echo -h *.*.*.* -p 5432 -U postgres -w -F p -a -b -f C:\Users\android\postgres_databases\*.*.*.*_avtodetali\avtodetali_db.backup avtodetali
+2020-08-24 19:55:43.989 [INFO] Сервер статистики старт ... localhost:7777
+2020-08-24 19:55:44.067 [INFO] Воркер [avtodetali.pro dumpBD] Команда успешно отработала. Длительность оперции: 34.012ms
+2020-08-24 19:56:31.152 [INFO] конфиг файл изменился. Перезагружаю конфиг ...
+2020-08-24 19:57:07.286 [ERRO] запуск воркера [empty test worker]:bad function chaining
+2020-08-24 19:57:07.286 [INFO] Воркер [avtodetali.pro dumpBD] запуск скрипта:echo -h *.*.*.* -p 5432 -U postgres -w -F p -a -b -f C:\Users\android\postgres_databases\*.*.*.*_avtodetali\avtodetali_db.backup avtodetali
+2020-08-24 19:57:07.330 [INFO] Сервер статистики старт ... localhost:7777
+2020-08-24 19:57:07.359 [INFO] Воркер [avtodetali.pro dumpBD] Команда успешно отработала. Длительность оперции: 30.0119ms
+2020-08-24 19:57:41.629 [INFO] Получен сигнал: [interrupt]
+2020-08-24 19:57:41.631 [INFO] Сервер отключается...
+2020-08-24 19:58:14.282 [INFO] Воркер [empty test worker] запуск скрипта:echo avtodetali/tmp/logs
+2020-08-24 19:58:14.284 [INFO] Сервер статистики старт ... localhost:7777
+2020-08-24 19:58:14.282 [INFO] Воркер [avtodetali.pro dumpBD] запуск скрипта:echo -h *.*.*.* -p 5432 -U postgres -w -F p -a -b -f C:\Users\android\postgres_databases\*.*.*.*_avtodetali\avtodetali_db.backup avtodetali
+2020-08-24 19:58:14.382 [INFO] Воркер [empty test worker] Команда успешно отработала. Длительность оперции: 40.9973ms
+2020-08-24 19:58:14.408 [INFO] Воркер [avtodetali.pro dumpBD] Команда успешно отработала. Длительность оперции: 43.0648ms
+2020-08-24 19:59:14.294 [INFO] Воркер [empty test worker] запуск скрипта:echo avtodetali/tmp/logs
+2020-08-24 19:59:14.343 [INFO] Воркер [empty test worker] Команда успешно отработала. Длительность оперции: 47.9457ms
+2020-08-24 19:59:35.513 [INFO] Получен сигнал: [interrupt]
+2020-08-24 19:59:35.515 [INFO] Сервер отключается...

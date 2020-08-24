@@ -1,14 +1,18 @@
 package main
 
 import (
+	"context"
 	l "log"
+	"net/http"
 	"os"
 	"os/exec"
 	"os/signal"
+	"path/filepath"
 	"runtime"
 	"strconv"
 	"strings"
 	"syscall"
+	"text/template"
 	"time"
 
 	"github.com/carlescere/scheduler"
@@ -24,6 +28,7 @@ import (
 var (
 	k   = koanf.New(".")
 	log logrus.FieldLogger
+	Jobs []*worker
 )
 
 type worker struct {
@@ -33,6 +38,10 @@ type worker struct {
 	TimeRun     string
 	Every       string
 	Enabled     bool
+	Status      string
+	Prev        time.Time
+	Next        time.Time
+	Duration    string
 }
 
 func init() {
@@ -52,7 +61,7 @@ func main() {
 	if err != nil {
 		log.Fatalf("загрузка конфига: %v", err)
 	}
-
+	Jobs = workers
 	schedulers := runAllJobs(workers)
 
 	if err := f.Watch(func(event interface{}, err error) {
@@ -71,29 +80,67 @@ func main() {
 		log.Errorln("наблюдатель конфига:", err)
 	}
 
-	sig := make(chan os.Signal, 1)
-	signal.Notify(sig)
-
-	for {
-		select {
-		case c := <-sig:
-			log.Infof("Получен сигнал: [%v]", c)
-			switch c {
-			case syscall.SIGHUP:
-
-				ss, err := restartService(f, schedulers)
-				if err != nil {
-					log.Fatalln("рестарт сервиса:", err)
-				}
-				schedulers = ss
-
-			case syscall.SIGINT, syscall.SIGTERM, syscall.SIGQUIT, syscall.SIGKILL, syscall.SIGABRT:
-				return
-			}
-		default:
-			time.Sleep(500 * time.Millisecond)
+	router := http.NewServeMux()
+	router.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		lp := filepath.Join("./", "statistic.html")
+		tmpl, err := template.ParseFiles(lp)
+		if err != nil {
+			log.Error(err)
 		}
+		data := map[string]interface{}{}
+		data["jobs"] = Jobs
+		err = tmpl.ExecuteTemplate(w, "statistic.html", data)
+		if err != nil {
+			log.Error(err.Error())
+			http.Error(w, http.StatusText(500), 500)
+		}
+	})
+	srv := http.Server{
+		Addr:    "localhost:7777",
+		Handler: router,
 	}
+
+	idleConnsClosed := make(chan struct{})
+
+	go func() {
+		sig := make(chan os.Signal, 1)
+		signal.Notify(sig)
+		for {
+			select {
+			case c := <-sig:
+				log.Infof("Получен сигнал: [%v]", c)
+				switch c {
+				case syscall.SIGHUP:
+
+					ss, err := restartService(f, schedulers)
+					if err != nil {
+						log.Fatalln("рестарт сервиса:", err)
+					}
+					schedulers = ss
+
+				case syscall.SIGINT, syscall.SIGTERM, syscall.SIGQUIT, syscall.SIGKILL, syscall.SIGABRT:
+					// We received an interrupt signal, shut down.
+					if err := srv.Shutdown(context.Background()); err != nil {
+						// Error from closing listeners, or context timeout:
+						log.Infof("HTTP server Shutdown: %v", err)
+					}
+					log.Infof("Сервер отключается...")
+					close(idleConnsClosed)
+
+				}
+			default:
+				time.Sleep(500 * time.Millisecond)
+			}
+		}
+
+	}()
+	log.Infoln("Сервер статистики старт ...", srv.Addr)
+	if err := srv.ListenAndServe(); err != http.ErrServerClosed {
+		// Error starting or closing listener:
+		log.Fatalf("HTTP server ListenAndServe: %v", err)
+	}
+
+	<-idleConnsClosed
 
 }
 
@@ -104,7 +151,7 @@ func restartService(f *file.File, ss []*scheduler.Job) ([]*scheduler.Job, error)
 	if err != nil {
 		return nil, err
 	}
-
+	Jobs = workers
 	return runAllJobs(workers), nil
 }
 
@@ -173,7 +220,7 @@ func stopAllJobs(ss []*scheduler.Job) {
 
 func (w *worker) start() {
 	log.Infof("Воркер [%s] запуск скрипта:%s", w.Name, w.Script)
-	start := time.Now()
+	w.Prev = time.Now()
 	if err := func() error {
 		var cmd *exec.Cmd
 		switch runtime.GOOS {
@@ -187,10 +234,13 @@ func (w *worker) start() {
 		}
 		return nil
 	}(); err != nil {
+		w.Status = "неудача"
 		log.Errorf("Воркер [%s] команда не отработала: %s", w.Name, err)
 		return
 	}
-	log.Infof("Воркер [%s] Команда успешно отработала. Длительность оперции: %v", w.Name, time.Since(start))
+	w.Duration = time.Since(w.Prev).String()
+	w.Status = "успех"
+	log.Infof("Воркер [%s] Команда успешно отработала. Длительность оперции: %v", w.Name, w.Duration)
 }
 
 func parseEveryTime(w *worker) *scheduler.Job {

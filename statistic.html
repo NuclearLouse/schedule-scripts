@@ -1,0 +1,58 @@
+<html>
+	<head>
+		<style>
+body {
+	margin: 30px 0 0 0;
+  font-size: 11px;
+  font-family: sans-serif;
+  color: #345;
+
+}
+h1 {
+	font-size: 24px;
+	text-align: center;
+	padding: 10 0 30px;
+}
+table {
+	/*max-width: 80%;*/
+	margin: 0 auto;
+  border-collapse: collapse;
+  border: none;
+}
+table td, table th {
+	min-width: 25px;
+	width: auto;
+  padding: 15px 20px;
+  border: none;
+}
+
+
+table tr:nth-child(odd) {
+  background-color: #f0f0f0;
+}
+table tr:nth-child(1) {
+  background-color: #345;
+  color: white;
+}
+th {
+  text-align: left;
+}
+
+		</style>
+	</head>
+	<body>
+
+<h1>Статистика по демон-скриптам</h1>
+
+<table>
+	<tr><th>Имя скрипта</th><th>Статус</th><th>Последний запуск</th><th>Длительность</th></tr>
+{{range .jobs}}
+
+	<tr>
+		<td>{{.Name}}</td>
+		<td>{{.Status}}</td>
+		<td>{{.Prev.Format "15:04:05"}}</td>
+		<td>{{.Duration}}</td>
+	</tr>
+{{end}}
+</table>

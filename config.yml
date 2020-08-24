@@ -1,12 +1,12 @@
 workers:
   - name: avtodetali.pro dumpBD
-    script: pg_dump -h *.*.*.* -p 5432 -U postgres -w -F p -a -b -f C:\Users\android\postgres_databases\*.*.*.*_avtodetali\avtodetali_db.backup avtodetali
+    script: echo -h *.*.*.* -p 5432 -U postgres -w -F p -a -b -f C:\Users\android\postgres_databases\*.*.*.*_avtodetali\avtodetali_db.backup avtodetali
     every: 1 h
     description: ежечасный дамп базы сайта
     enabled: true
   - name: empty test worker
     script: echo avtodetali/tmp/logs
-    time_run: 15:45
-    every: monday
+    time_run: 
+    every: 1 m
     description: просто проверка конфига
-    enabled: false
+    enabled: true
